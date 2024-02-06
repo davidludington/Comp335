@@ -32,21 +32,29 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public boolean offer(final E obj) {
     // TODO
 
-    return false;
+    if(isFull()) return false;
+    
+    data[rear] = obj;
+    rear = (rear + 1) % capacity;
+    return true;
+      
   }
 
   @Override
   public E peek() {
     // TODO
-
-    return null;
+    if(isEmpty()) return null;
+    return data[front];
   }
 
   @Override
   public E poll() {
     // TODO
 
-    return null;
+    if(isEmpty()) return null;
+    ele = data[front];
+    front = (front + 1) % capacity;
+    retrun ele;
   }
 
   @Override
