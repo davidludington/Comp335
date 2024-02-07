@@ -15,6 +15,9 @@ class TestSimpleQueueJqwik {
     @Override
     public boolean precondition(final SimpleQueue<String> queue) {
       // TODO implement precondition for offer method
+      if(queue.isFull()){
+        return false;
+      }
       return true;
     }
     @Override
@@ -24,7 +27,11 @@ class TestSimpleQueueJqwik {
         String.format("offer(%s)", element),
         queue -> {
           // TODO capture state before offer, perform, and check postcondition
-
+          var sizeBefore = queue.size();
+          assertTrue(queue.offer(element));
+          assertFalse(queue.isEmpty());
+          assertEquals(sizeBefore + 1, queue.size());
+          assertTrue(element.equals(queue.peek()));
         }
       ));
     }
@@ -35,6 +42,11 @@ class TestSimpleQueueJqwik {
       .describeAs("poll")
       .justMutate(queue -> {
         // TODO capture state before poll, perform, and check postcondition
+        var sizeBefore = queue.size();
+        var peek = queue.peek();
+        var poll = queue.poll();
+        assertEquals(poll, peek);
+        //assertEquals(sizeBefore - 1, queue.size());
 
       });
   }
