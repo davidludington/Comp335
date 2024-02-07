@@ -20,7 +20,9 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @SuppressWarnings("unchecked")
   public FixedArrayQueue(final int capacity) {
     // TODO check argument validity
-
+    if(capacity < 0){
+      throw new IllegalArgumentException("Capacity cannot be less that zero");
+    }
     this.capacity = capacity;
     this.data = (E[]) new Object[capacity];
     this.size = 0;
@@ -32,41 +34,60 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public boolean offer(final E obj) {
     // TODO
 
-    if(isFull()) return false;
-    
-    data[rear] = obj;
-    rear = (rear + 1) % capacity;
+    if(isFull()){
+      return false;
+    } else{
+      rear = (rear + 1) % capacity;
+      data[rear] = obj;
+      size++;
+    }
     return true;
-      
   }
 
   @Override
   public E peek() {
     // TODO
-    if(isEmpty()) return null;
-    return data[front];
+    if(isEmpty()){
+      return null;
+    } else{
+      return data[front];
+    } 
+    
   }
 
   @Override
   public E poll() {
     // TODO
 
-    if(isEmpty()) return null;
-    ele = data[front];
+    if(isEmpty()){
+      return null;
+    } else {
+      E element = data[front];
     front = (front + 1) % capacity;
-    retrun ele;
+    size--;
+    return element;
+    }
   }
 
   @Override
   public boolean isEmpty() {
     // TODO
-    return true;
+    return size == 0;
+    
   }
 
   @Override
   public boolean isFull() {
     // TODO
+    return (size == capacity);
+    
+    /*
+    if((front == 0 && rear == size - 1) || (rear == (front - 1) % (size - 1))){
+      return true;
+    }
     return false;
+    */
+    
   }
 
   @Override
@@ -82,7 +103,12 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @Override
   public List<E> asList() {
     // TODO implement using an ArrayList preallocated with the right size
-    final ArrayList<E> result = null;
+    final ArrayList<E> result = new ArrayList<>(size);
+    int idx = front;
+    for(int i = 0; i < size; i++){
+      result.add(data[idx]);
+      idx = (idx + 1) % capacity;
+    }
     
     return result;
   }
