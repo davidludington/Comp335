@@ -2,6 +2,9 @@ package edu.luc.cs271.arrayqueue;
 
 import java.util.List;
 
+import javax.swing.Action;
+import javax.xml.transform.Transformer;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import net.jqwik.api.*;
@@ -46,11 +49,12 @@ class TestSimpleQueueJqwik {
         var peek = queue.peek();
         var poll = queue.poll();
         assertEquals(poll, peek);
-        //assertEquals(sizeBefore - 1, queue.size());
+        assertEquals(sizeBefore - 1, queue.size());
 
       });
   }
 
+  
   // TODO extra credit: apply property to different queue capacities
   @Property
   void checkSimpleQueue(@ForAll("simpleQueueActions") final ActionChain<SimpleQueue<String>> chain) {
@@ -66,5 +70,7 @@ class TestSimpleQueueJqwik {
       .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(1))
       .withAction(new OfferAction())
       .withAction(poll());
+
   }
+  
 }
