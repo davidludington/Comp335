@@ -85,4 +85,12 @@ public interface SimpleQueue<E> {
    * @return The list containing the items in the queue
    */
   List<E> asList();
+
+  /**
+   * Removes all of the elements from the queue. The queue will be empty after this method returns.
+   * 
+   * @pre True 
+   * @post queue is empty
+   */
+  void clear();
 }

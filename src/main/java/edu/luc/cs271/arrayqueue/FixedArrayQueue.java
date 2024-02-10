@@ -112,4 +112,9 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
     
     return result;
   }
+
+  @Override
+  public void clear(){
+    rear = front = size = 0;
+  }
 }

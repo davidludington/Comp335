@@ -144,4 +144,15 @@ class TestSimpleQueue {
     assertEquals(2, list.size());
     assertEquals(List.of(value2, value3), list);
   }
+
+  @Test
+  void testClear() {
+    final var value1 = "hello";
+    final var value2 = "world";
+    fixture.offer(value1);
+    fixture.offer(value2);
+    assertFalse(fixture.isEmpty());
+    fixture.clear();
+    assertTrue(fixture.isEmpty());
+  }
 }
