@@ -102,10 +102,29 @@ class TestSimpleQueueJqwik {
     .run();
   }
 
+  @Property
+  void checkSimpleQueueDifferntSize(@ForAll("simpleQueueActionsCapacity3") final ActionChain<SimpleQueue<String>> chain) {
+    // TODO insert observable data invariant(s) for 0 <= size <= capacity
+    chain
+    
+
+    .run();
+  }
+
   @Provide
   Arbitrary<ActionChain<SimpleQueue<String>>> simpleQueueActions() {
     return ActionChain
       .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(5))
+      .withAction(new OfferAction())
+      .withAction(poll())
+      .withAction(new clearTest());
+
+  }
+
+  @Provide
+  Arbitrary<ActionChain<SimpleQueue<String>>> simpleQueueActionsCapacity3() {
+    return ActionChain
+      .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(3))
       .withAction(new OfferAction())
       .withAction(poll())
       .withAction(new clearTest());
