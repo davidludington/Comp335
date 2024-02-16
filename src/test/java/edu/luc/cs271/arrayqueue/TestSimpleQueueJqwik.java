@@ -63,9 +63,33 @@ class TestSimpleQueueJqwik {
         assertTrue(queue.isEmpty());
         
       });
-      
+
   }
   */
+  
+  class clearTest implements Action.Independent<SimpleQueue<String>> {
+    @Override
+    public boolean precondition(final SimpleQueue<String> queue) {
+      // TODO implement precondition for offer method
+      return !queue.isFull() && queue.capacity() > 0;
+    }
+    @Override
+    public Arbitrary<Transformer<SimpleQueue<String>>> transformer() {
+      final var offerElements = Arbitraries.strings().alpha().ofLength(5);
+      return offerElements.map(element -> Transformer.mutate(
+        String.format("offer(%s)", element),
+        queue -> {
+          assertTrue(queue.offer(element));
+          assertFalse(queue.isEmpty());
+          queue.clear();
+          assertTrue(queue.isEmpty());
+        }
+      ));
+    }
+  }
+      
+
+  
 
   
   // TODO extra credit: apply property to different queue capacities
@@ -83,8 +107,8 @@ class TestSimpleQueueJqwik {
     return ActionChain
       .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(5))
       .withAction(new OfferAction())
-      .withAction(poll());
-      //.withAction(clear());
+      .withAction(poll())
+      .withAction(new clearTest());
 
   }
   
