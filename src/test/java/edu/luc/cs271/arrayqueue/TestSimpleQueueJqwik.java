@@ -49,25 +49,9 @@ class TestSimpleQueueJqwik {
         
       });
   }
-
-  /*
   
-  private Action<SimpleQueue<String>> clear() {
-    return Action.<SimpleQueue<String>>builder()
-      .describeAs("clear")
-      .justMutate(queue -> {
-        // TODO capture state before poll, perform, and check postcondition
-
-        assertTrue(!queue.isEmpty());
-        queue.clear();
-        assertTrue(queue.isEmpty());
-        
-      });
-
-  }
-  */
   
-  class clearTest implements Action.Independent<SimpleQueue<String>> {
+  class clearTest implements Action.Independent<SimpleQueue<String>> { 
     @Override
     public boolean precondition(final SimpleQueue<String> queue) {
       // TODO implement precondition for offer method
@@ -82,6 +66,7 @@ class TestSimpleQueueJqwik {
           assertTrue(queue.offer(element));
           assertFalse(queue.isEmpty());
           queue.clear();
+          assertEquals(0, queue.size());
           assertTrue(queue.isEmpty());
         }
       ));
@@ -97,7 +82,7 @@ class TestSimpleQueueJqwik {
   void checkSimpleQueue(@ForAll("simpleQueueActions") final ActionChain<SimpleQueue<String>> chain) {
     // TODO insert observable data invariant(s) for 0 <= size <= capacity
     chain
-    
+    .withInvariant("size", queue -> assertTrue(0 <= queue.size() && queue.size() <= queue.capacity()))
 
     .run();
   }
@@ -106,8 +91,8 @@ class TestSimpleQueueJqwik {
   void checkSimpleQueueDifferntSize(@ForAll("simpleQueueActionsCapacity3") final ActionChain<SimpleQueue<String>> chain) {
     // TODO insert observable data invariant(s) for 0 <= size <= capacity
     chain
+    .withInvariant("size", queue -> assertTrue(0 <= queue.size() && queue.size() <= queue.capacity()))
     
-
     .run();
   }
 
