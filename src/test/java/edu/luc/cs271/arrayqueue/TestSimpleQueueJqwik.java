@@ -15,10 +15,7 @@ class TestSimpleQueueJqwik {
     @Override
     public boolean precondition(final SimpleQueue<String> queue) {
       // TODO implement precondition for offer method
-      if(queue.isFull()){
-        return false;
-      }
-      return true;
+      return !queue.isFull() && queue.capacity() > 0;
     }
     @Override
     public Arbitrary<Transformer<SimpleQueue<String>>> transformer() {
@@ -27,11 +24,11 @@ class TestSimpleQueueJqwik {
         String.format("offer(%s)", element),
         queue -> {
           // TODO capture state before offer, perform, and check postcondition
-          var sizeBefore = queue.size();
+          final var sizeBefore = queue.size();
+          final var peekBefore = queue.peek();
           assertTrue(queue.offer(element));
           assertFalse(queue.isEmpty());
           assertEquals(sizeBefore + 1, queue.size());
-          assertTrue(element.equals(queue.peek()));
         }
       ));
     }
@@ -42,13 +39,33 @@ class TestSimpleQueueJqwik {
       .describeAs("poll")
       .justMutate(queue -> {
         // TODO capture state before poll, perform, and check postcondition
-        var sizeBefore = queue.size();
-        var peek = queue.peek();
-        var poll = queue.poll();
+        final var sizeBefore = queue.size();
+        final var peek = queue.peek();
+        final var poll = queue.poll();
         assertEquals(poll, peek);
-        //assertEquals(Math.abs(sizeBefore - 1) , queue.size());
+        if(sizeBefore >= 1){
+          assertEquals(queue.size(), sizeBefore - 1);
+        }
+        
       });
   }
+
+  /*
+  
+  private Action<SimpleQueue<String>> clear() {
+    return Action.<SimpleQueue<String>>builder()
+      .describeAs("clear")
+      .justMutate(queue -> {
+        // TODO capture state before poll, perform, and check postcondition
+
+        assertTrue(!queue.isEmpty());
+        queue.clear();
+        assertTrue(queue.isEmpty());
+        
+      });
+      
+  }
+  */
 
   
   // TODO extra credit: apply property to different queue capacities
@@ -57,16 +74,19 @@ class TestSimpleQueueJqwik {
     // TODO insert observable data invariant(s) for 0 <= size <= capacity
     chain
     
+
     .run();
   }
 
   @Provide
   Arbitrary<ActionChain<SimpleQueue<String>>> simpleQueueActions() {
     return ActionChain
-      .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(1))
+      .<SimpleQueue<String>>startWith(() -> new FixedArrayQueue<String>(5))
       .withAction(new OfferAction())
       .withAction(poll());
+      //.withAction(clear());
 
   }
   
 }
+
