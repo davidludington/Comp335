@@ -2,6 +2,7 @@ package edu.luc.cs271.arrayqueue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class FixedArrayQueue<E> implements SimpleQueue<E> {
 
@@ -116,5 +117,6 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @Override
   public void clear(){
     rear = front = size = 0;
+    Arrays.fill(data, null);
   }
 }
