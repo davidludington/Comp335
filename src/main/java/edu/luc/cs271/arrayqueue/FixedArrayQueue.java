@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class FixedArrayQueue<E> implements SimpleQueue<E> {
 
-  private final int capacity;
+  private final int;
 
   private int size;
 
