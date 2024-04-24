@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(617c3e6d-0c26-4afd-b5f7-2fd83f06c544), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Java source to /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/davidludington/VSProjects/project-1b-davidludington/src/main/java/edu/luc/cs271/arrayqueue/SingleQueueService.java:51:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method off(java.lang.String)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable queue of type edu.luc.cs271.arrayqueue.SimpleQueue<java.lang.String>[0m
+[0m[[0m[31merror[0m] [0m[0mqueue.off[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) javac returned non-zero exit code[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 0 s, completed Feb 9, 2024, 11:23:10 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

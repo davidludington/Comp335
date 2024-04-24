@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/davidludington/VSProjects/project-1b-davidludington/src/test/java/edu/luc/cs271/arrayqueue/TestSimpleQueueJqwik.java:105:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method clear()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class edu.luc.cs271.arrayqueue.TestSimpleQueueJqwik[0m
+[0m[[0m[31merror[0m] [0m[0mclear[0m

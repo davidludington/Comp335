@@ -1,0 +1,48 @@
+[0m[[0m[33mwarn[0m] [0m[0mjavaOptions will be ignored, fork is set to false[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.luc.cs271.arrayqueue.TestSimpleQueue, net.aichler.jupiter.api.JupiterTestFingerprint@4506141f, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run started (JUnit Jupiter)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testAsListNonempty2()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testOffer3Poll3()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testClear()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testOffer5Poll5()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testOfferThenPoll()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testNegativeCapacity()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testAsListNonempty()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testAsListEmpty()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testAfterOffer()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testInitial()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testOffer3()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueue[0m[36m#testOffer2ThenPoll2()[0m started[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, [0m[34m12 total, [0m[34m0.054s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.luc.cs271.arrayqueue.TestSimpleQueueJqwik, net.aichler.jupiter.api.JupiterTestFingerprint@24d7adfd, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run started (jqwik (JUnit Platform))[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueueJqwik[0mcheckSimpleQueueDifferntSize(net.jqwik.api.state.ActionChain) started[0m
+[0m[[0m[0minfo[0m] [0m[0mtimestamp = 2024-02-28T07:11:00.940194, TestSimpleQueueJqwik:checkSimpleQueueDifferntSize = [0m
+[0m[[0m[0minfo[0m] [0m[0m                              |-----------------------jqwik-----------------------[0m
+[0m[[0m[0minfo[0m] [0m[0mtries = 1000                  | # of calls to property[0m
+[0m[[0m[0minfo[0m] [0m[0mchecks = 1000                 | # of not rejected calls[0m
+[0m[[0m[0minfo[0m] [0m[0mgeneration = RANDOMIZED       | parameters are randomly generated[0m
+[0m[[0m[0minfo[0m] [0m[0mafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed[0m
+[0m[[0m[0minfo[0m] [0m[0mwhen-fixed-seed = ALLOW       | fixing the random seed is allowed[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#mode = MIXIN       | edge cases are mixed in[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#total = 0          | # of all combined edge cases[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#tried = 0          | # of edge cases tried in current run[0m
+[0m[[0m[0minfo[0m] [0m[0mseed = -3594728907693751495   | random seed to reproduce generated values[0m
+[0m[[0m[0minfo[0m] [0m[0mTest edu.luc.cs271.arrayqueue.[33mTestSimpleQueueJqwik[0mcheckSimpleQueue(net.jqwik.api.state.ActionChain) started[0m
+[0m[[0m[0minfo[0m] [0m[0mtimestamp = 2024-02-28T07:11:01.158205, TestSimpleQueueJqwik:checkSimpleQueue = [0m
+[0m[[0m[0minfo[0m] [0m[0m                              |-----------------------jqwik-----------------------[0m
+[0m[[0m[0minfo[0m] [0m[0mtries = 1000                  | # of calls to property[0m
+[0m[[0m[0minfo[0m] [0m[0mchecks = 1000                 | # of not rejected calls[0m
+[0m[[0m[0minfo[0m] [0m[0mgeneration = RANDOMIZED       | parameters are randomly generated[0m
+[0m[[0m[0minfo[0m] [0m[0mafter-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed[0m
+[0m[[0m[0minfo[0m] [0m[0mwhen-fixed-seed = ALLOW       | fixing the random seed is allowed[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#mode = MIXIN       | edge cases are mixed in[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#total = 0          | # of all combined edge cases[0m
+[0m[[0m[0minfo[0m] [0m[0medge-cases#tried = 0          | # of edge cases tried in current run[0m
+[0m[[0m[0minfo[0m] [0m[0mseed = -8275888072959542284   | random seed to reproduce generated values[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, [0m[34m2 total, [0m[34m0.662s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSummary for Jupiter not available.[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 14, Failed 0, Errors 0, Passed 14[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.luc.cs271.arrayqueue.TestSimpleQueueJqwik[0m
+[0m[[0m[0mdebug[0m] [0m[0m	edu.luc.cs271.arrayqueue.TestSimpleQueue[0m

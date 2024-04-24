@@ -1,0 +1,5 @@
+[0m[[0m[0minfo[0m] [0m[0mInstrumenting 3 classes to /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/jacoco/instrumented-classes[0m
+[0m[[0m[0mdebug[0m] [0m[0minstrumenting products: /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/classes[0m
+[0m[[0m[0mdebug[0m] [0m[0minstrumenting /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/classes/edu/luc/cs271/arrayqueue/FixedArrayQueue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0minstrumenting /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/classes/edu/luc/cs271/arrayqueue/SimpleQueue.class[0m
+[0m[[0m[0mdebug[0m] [0m[0minstrumenting /Users/davidludington/VSProjects/project-1b-davidludington/target/scala-2.12/classes/edu/luc/cs271/arrayqueue/SingleQueueService.class[0m
